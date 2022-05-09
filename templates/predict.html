@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<html >
+<head>
+<title>Almabetter MLE IMDB Sentiment</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+</head>
+<body>
+
+<!-- Sidebar (hidden by default) -->
+<!-- Top menu -->
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+	<div class="w3-left w3-padding-16">Instructor: Arnav</div>
+    <div class="w3-right w3-padding-16">Contact Us</div>
+    <div class="w3-center w3-padding-16">IMDB Sentiment Analysis</div>
+  </div>
+</div>
+  
+<!-- !PAGE CONTENT! -->
+</body>
+
+<div id="brandname">
+
+
+</div>
+	
+	<p style="color:white;font-size:20;text-align: center;"><b>The review that was posted is: </b></p>
+	<div class="results" "w3-container w3-card " style= "border-radius:58px;background-color:white;padding:40px;width: auto;" id="ip4">
+        	
+	{% if prediction == 1%}
+	<div class="w3-center w3-padding-16"><h2 style="color:blue;">Positive  Review (Movie is good) </h2> </div>
+	{% elif prediction == 0%}
+	<div class="w3-center w3-padding-16"><h2 style="color:red;">Negative Review (Movie is bad)</h2></div>
+	{% endif %}
+
+        </div>
+	</div>
+
+</body>
+</html>
