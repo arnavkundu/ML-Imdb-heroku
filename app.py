@@ -4,26 +4,12 @@ import pickle
 import pandas as pd
 import flasgger
 from flasgger import Swagger
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.feature_extraction.text import TfidfTransformer
-from sklearn.linear_model import LogisticRegressionCV
-from nltk.stem.porter import PorterStemmer
-from utils import tokenizer_stemmer, tokenizer
 
 app=Flask(__name__)
 Swagger(app)
 
-prt_stem = pickle.load(open('prt_stem.pkl','rb'))
-
-def tokenizer(text):
-  return text.split()
-
-def tokenizer_stemmer(text):
-  return[prt_stem.stem(word) for word in text.split()]
-
 mle = pickle.load(open('mle_deployment_senti_model.pkl','rb'))
 tfidf_vect = pickle.load(open('tfidf_imdb.pkl','rb'))
-
 
 @app.route('/')
 def home():
@@ -37,7 +23,7 @@ def predict():
         data = [Reviews]
         vect = tfidf_vect.transform(data).toarray()
         my_prediction = mle.predict(vect)
-    return render_template('predict.html',prediction = my_prediction)
+    return render_template('result.html',prediction = my_prediction)
 
 
 
