@@ -8,6 +8,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.linear_model import LogisticRegressionCV
 from nltk.stem.porter import PorterStemmer
+from utils import tokenizer_stemmer, tokenizer
 
 app=Flask(__name__)
 Swagger(app)
