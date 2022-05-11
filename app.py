@@ -23,7 +23,7 @@ def predict():
         data = [Reviews]
         vect = tfidf_vect.transform(data).toarray()
         my_prediction = mle.predict(vect)
-    return render_template('result.html',prediction = my_prediction)
+    return render_template('predict.html',prediction = my_prediction)
 
 
 
